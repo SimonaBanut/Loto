@@ -7,8 +7,9 @@ import java.util.Set;
 
 public class LotoProno {
     public static void main(String[] args) {
-        int ntries = 0;
-        int cateamghicit = 0;
+        int ntries = 0;//numara variantele generate
+        int cateamghicit = 0;//numara cate numere se ghicesc
+
             // the lotto machine and init it
         Random lottoMachine = new Random();
         lottoMachine.setSeed(System.currentTimeMillis());
@@ -52,13 +53,14 @@ public class LotoProno {
                         if (cateamghicit==6) System.out.println("ati castigat marele premiu");
                             else
                         {
-                           myset= mysetofSix();
-                            ntries++;}
+                           myset= mysetofSix();//generam alt bilet/varianta
+                            ntries++;}//marim counterul de variante generate
 
         }
         while (cateamghicit < 3);
         System.out.println("ai jucat: " + ntries + "variante");
     }
+    //generam variante de bilete
         public static Set<Integer> mysetofSix() {
             // ALTE 6 PENTRU BILETUL MEU
             Random lottoMachine = new Random();
